@@ -1,0 +1,14 @@
+#header{
+text-align: center;
+}
+#nav ul{
+display:none;
+}
+
+#nav form{
+display:none;
+}
+
+#content{
+margin-left:0em;
+}

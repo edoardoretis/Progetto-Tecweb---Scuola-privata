@@ -1,0 +1,120 @@
+body {
+    font-style: arial verdana sans-serif;
+    font-size: 18px;
+    width: 70%;
+    height: 700px;
+    margin: auto;
+    padding: 0;
+    background-color: 	#DCDCDC;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*header style*/
+#header, h1 a {
+    background-color: #A52A2A;
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+    font-size: 3.5em;
+    margin: 0;
+    font-variant: small-caps;
+}
+#header h2 {
+    font-variant: small-caps;
+}
+
+/*no underline for links*/
+a {
+    text-decoration: none;
+}
+
+.affiliazione {
+    color: black;
+    font-size: 0.8em;
+}
+
+.affiliazione a{
+    color: #fff;
+}
+
+.affiliazione a:hover {
+    text-decoration: underline; 
+}
+
+/*path*/
+#path {
+    background-color: #ADD8E6;
+    font-size: 1.1em;
+    font-variant: small-caps;
+    padding: 8px;
+    color: black;
+}
+
+/*navigation menu*/
+#nav {
+    position: relative;
+    font-size: 1.1em;
+    font-variant: small-caps;
+    float: left;
+    background-color: #A52A2A;
+    height: 61.5%;
+    border-radius: 0 0 10px 10px
+}
+
+#nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#nav li a, li.active {
+    display: block;
+    padding: 1em;
+    color: #ADD8E6;
+    border-radius: 5px;
+}
+
+#nav li:first-child {
+    border-radius: 0 0 5px 5px;
+}
+
+li.active{ 
+    background-color: #ADD8E6;
+    color: #dd0000;
+}
+
+#nav li a:hover, li.active:hover {
+    background-color:#ADD8E6;
+    color: #dd0000;
+}
+
+#corpo {
+    display: inline-block;
+    padding: 15px;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+}
+
+#corpo h2 {
+    margin: 0;
+}
+
+#footer {
+	color: black;
+    text-align: right;
+    clear: both;
+    position: relative;
+    bottom: 7.5%;
+    left: 0;
+    padding: 15px;
+    padding-left: 95.906px;
+    background-color: #ADD8E6;
+    border-radius: 0 0 10px 0;
+    z-index: -1;
+}
+
+

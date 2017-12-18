@@ -1,43 +1,49 @@
 
 SET foreign_key_checks=0;
 
+USE Tecweb;
+DROP TABLE IF EXISTS lezioni;
 DROP TABLE IF EXISTS docenti;
 DROP TABLE IF EXISTS aule;
 DROP TABLE IF EXISTS corsi;
-DROP TABLE IF EXISTS lezioni;
 
+CREATE TABLE corsi (
+    IdCorso int,
 
-CREATE TABLE docenti(
-IdDocente varchar(16) PRIMARY KEY,
-Nome varchar (20) NOT NULL,
-Cognome varchar(20) NOT NULL,
-Data di nascita date NOT NULL,
-Email varchar(30) NOT NULL,
-Indirizzo varchar(40)
-Pw varchar(15) NOT NULL,
-IdCorso varchar(2) NOT NULL
-FOREIGN KEY(IdCorso) REFERENCE corsi(IdCorso)
-)engine=innoDB;
+    PRIMARY KEY(IdCorso)
+);
 
-CREATE TABLE aule(
-IdAula varchar(2) PRIMARY KEY
-)engine=innoDB;
+CREATE TABLE docenti (
+    IdDocente int,
+    Nome varchar (255) NOT NULL,
+    Cognome varchar(255) NOT NULL,
+    dataNascita date NOT NULL,
+    Email varchar(255) NOT NULL,
+    Indirizzo varchar(255),
+    Psw varchar(255) NOT NULL,
+    IdCorso int NOT NULL UNIQUE,
+    
+    PRIMARY KEY(IdDocente),
+    FOREIGN KEY(IdCorso) REFERENCES corsi(IdCorso) ON UPDATE CASCADE
+);
 
-CREATE TABLE corsi(
-IdCorso varchar(2) PRIMARY KEY
-)engine=innoDB;
+CREATE TABLE aule (
+    IdAula int,
 
-CREATE TABLE lezioni(
-IdDocente varchar(16) PRIMARY KEY,
-IdCorso varchar(2) NOT NULL,
-IdAula varchar(2) NOT NULL,
-OraInizio time,
-OraFine time
-FOREIGN KEY(IdDocente) REFERENCE docenti(IdDocenti),
-FOREIGN KEY(IdCorso) REFERENCE corsi(IdCorso),
-FOREIGN KEY(IdAula) REFERENCE aule(IdAula)
-)engine=innoDB;
+    PRIMARY KEY(IdAula)
+);
 
-
+CREATE TABLE lezioni (
+    IdDocente int UNIQUE,
+    IdCorso int UNIQUE,
+    IdAula int NOT NULL UNIQUE,
+    OraInizio datetime,
+    OraFine datetime,
+    
+    PRIMARY KEY(OraInizio, OraFine),
+    FOREIGN KEY(IdDocente) REFERENCES docenti(IdDocente) ON UPDATE CASCADE,
+    FOREIGN KEY(IdCorso) REFERENCES corsi(IdCorso),
+    FOREIGN KEY(IdAula) REFERENCES aule(IdAula)
+);
 
 SET foreign_key_checks=1;

@@ -9,6 +9,10 @@ DROP TABLE IF EXISTS corsi;
 
 CREATE TABLE corsi (
     IdCorso int,
+    nome varchar (255) NOT NULL,
+    prezzo int NOT NULL,
+    datainizio date,
+    datafine date,
 
     PRIMARY KEY(IdCorso)
 );

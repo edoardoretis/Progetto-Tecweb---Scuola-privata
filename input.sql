@@ -9,20 +9,20 @@ INSERT INTO Docenti VALUES ("KVNGBB73M14L407F",  "Kevin", "Gabbo", "14/08/1973",
 INSERT INTO Docenti VALUES ("BRNPLO88M08L736Y",  "Braian", "Pol", "08/08/1988", "braian@libero.it", "Lungo Canale 980, Venezia", "brapol","M1");
 
 /*tabella corsi*/
-INSERT INTO corsi VALUES("B0");	
-INSERT INTO corsi VALUES("B1");
-INSERT INTO corsi VALUES("B2");
-INSERT INTO corsi VALUES("M1");
+INSERT INTO corsi VALUES("B0", "Base", "50", "01/10/2017", "31/10/2017");	
+INSERT INTO corsi VALUES("B1", "Intermedio", "100", "01/10/2017", "25/01/2018");
+INSERT INTO corsi VALUES("B2", "Avanzato", "200", "05/02/2018", "20/07/2018");
+INSERT INTO corsi VALUES("M1", "Madrelingua", "500", "01/10/2017", "31/09/2018");
 
 /*tabella aule*/
-INSERT INTO aule VALUES("A1");
-INSERT INTO aule VALUES("A2");
-INSERT INTO aule VALUES("A3");
-INSERT INTO aule VALUES("A4");
-INSERT INTO aule VALUES("A5");
-INSERT INTO aule VALUES("A6");
-INSERT INTO aule VALUES("A7");
-INSERT INTO aule VALUES("A8");
+INSERT INTO aule VALUES("A1", "50", "via Aldo Baglio, 23");
+INSERT INTO aule VALUES("A2", "50", "via Aldo Baglio, 23");
+INSERT INTO aule VALUES("A3", "50", "via Aldo Baglio, 23");
+INSERT INTO aule VALUES("A4", "100", "via Schio, 94");
+INSERT INTO aule VALUES("A5", "75", "viale dei pioppi, 3");
+INSERT INTO aule VALUES("A6", "25", "via del gatto, 9");
+INSERT INTO aule VALUES("A7", "25", "via del gatto, 9");
+INSERT INTO aule VALUES("A8", "250", "via Lussatti, 25");
 
 /*TABELLA LEZIONI*/
 INSERT INTO lezioni VALUES("BSCCHR75R61C638E", "B0", "A1", "9:00", "10:30");

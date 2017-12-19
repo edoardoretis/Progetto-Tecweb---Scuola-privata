@@ -9,10 +9,10 @@ DROP TABLE IF EXISTS corsi;
 
 CREATE TABLE corsi (
     IdCorso int,
-    nomecorso varchar (255) NOT NULL,
-    prezzo int NOT NULL,
-    datainizio date,
-    datafine date,
+    Nomecorso varchar (255) NOT NULL,
+    Prezzo int NOT NULL,
+    Datainizio date,
+    Datafine date,
 
     PRIMARY KEY(IdCorso)
 );
@@ -33,6 +33,8 @@ CREATE TABLE docenti (
 
 CREATE TABLE aule (
     IdAula int,
+    Capacità int NOT NULL,
+    Indirizzo varchar(255),
 
     PRIMARY KEY(IdAula)
 );

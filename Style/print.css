@@ -1,0 +1,39 @@
+#header{
+text-align: center;
+}
+#nav ul{
+display:none;
+}
+
+#nav form{
+display:none;
+}
+
+#content{
+margin-left:0em;
+}
+
+/*header style*/
+#header, h1 a {
+    background-color: rgb(0, 102, 255);
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Courier";
+    font-size: 3.5em;
+    margin: 0;
+    font-variant: small-caps;
+}
+
+
+#header h2 {
+    font-variant: small-caps;
+}
+
+#footer{
+display: none;
+}
+

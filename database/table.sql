@@ -17,6 +17,13 @@ CREATE TABLE corsi (
     PRIMARY KEY(IdCorso)
 );
 
+CREATE TABLE admin (
+    idAdmin varchar(255) UNIQUE,
+    Psw varchar(255) UNIQUE,
+
+    PRIMARY KEY(idAdmin)
+);
+
 CREATE TABLE docenti (
     IdDocente int,
     Nome varchar (255) NOT NULL,

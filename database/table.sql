@@ -4,11 +4,12 @@ SET foreign_key_checks=0;
 USE Tecweb;
 DROP TABLE IF EXISTS lezioni;
 DROP TABLE IF EXISTS docenti;
+DROP TABLE IF EXISTS admin;
 DROP TABLE IF EXISTS aule;
 DROP TABLE IF EXISTS corsi;
 
 CREATE TABLE corsi (
-    IdCorso int,
+    IdCorso varchar(2),
     Nomecorso varchar (255) NOT NULL,
     Prezzo int NOT NULL,
     Datainizio date,
@@ -25,21 +26,21 @@ CREATE TABLE admin (
 );
 
 CREATE TABLE docenti (
-    IdDocente int,
+    IdDocente varchar(16),
     Nome varchar (255) NOT NULL,
     Cognome varchar(255) NOT NULL,
     dataNascita date NOT NULL,
     Email varchar(255) NOT NULL,
     Indirizzo varchar(255),
     Psw varchar(255) NOT NULL,
-    IdCorso int NOT NULL UNIQUE,
+    IdCorso varchar(2) NOT NULL,
     
     PRIMARY KEY(IdDocente),
     FOREIGN KEY(IdCorso) REFERENCES corsi(IdCorso) ON UPDATE CASCADE
 );
 
 CREATE TABLE aule (
-    IdAula int,
+    IdAula varchar(2),
     Capacità int NOT NULL,
     Indirizzo varchar(255),
 
@@ -47,9 +48,9 @@ CREATE TABLE aule (
 );
 
 CREATE TABLE lezioni (
-    IdDocente int UNIQUE,
-    IdCorso int UNIQUE,
-    IdAula int NOT NULL UNIQUE,
+    IdDocente varchar(16),
+    IdCorso varchar(2),
+    IdAula varchar(2) NOT NULL,
     OraInizio datetime,
     OraFine datetime,
     

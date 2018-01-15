@@ -5,7 +5,7 @@ body {
     height: 700px;
     margin: auto;
     padding: 0;
-    background-color: rgb(212, 209, 209);
+    background-color: rgb(228, 228, 228);
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -35,18 +35,6 @@ a {
     text-decoration: none;
 }
 
-.affiliazione {
-    color: #fff;
-    font-size: 0.8em;
-}
-
-.affiliazione a{
-    color: #fff;
-}
-
-.affiliazione a:hover {
-    text-decoration: underline; 
-}
 
 /*path*/
 #path {
@@ -127,4 +115,38 @@ li.active{
     background-color: rgb(0, 102, 255);
     border-radius: 0 0 10px 10px;
     z-index: -1;
+}
+
+
+/* login.php */
+#loginForm {
+    display: block;
+    margin: auto;
+    width: 40%;
+    position: relative;
+    /*border: 2px solid rgb(0, 102, 255); */
+}
+
+#loginForm input {
+    font-size: 1em;
+    display: block;
+    width: 90%;
+    margin: auto;
+    padding: 1.5%;
+    margin-bottom: 5%;
+    background-color: rgb(248, 210, 104);
+}
+
+#loginForm label {
+    display: block;
+    text-align: center;
+    margin-bottom: 2%;
+} 
+
+#corpo h2.centered {
+    text-align: center;
+}
+
+.centered {
+    text-align: center;
 }

@@ -23,8 +23,7 @@
         <h2>Direttore: Dr. Rossi Mario</h2>
     </div>
 
-    <div id="path">Ti trovi in: <span xml:lang="en">Home</span> &gt;&gt; Lezioni
-      <span id="login"><a href="login.php"> Accedi </a></span>
+    <div id="path">Ti trovi in: <span xml:lang="en">Login page</span>
     </div>
     
     <span id="skipNav"><a href="#corpo">Salta la navigazione</a></span> <!-- position: absolute; height: 0; overflow: hidden; -->
@@ -32,13 +31,22 @@
         <ul>
             <li><a href="home.html"><span xml:lang="en">Home</span></a></li>
             <li><a href="corsi.html">Corsi</a></li>
-            <li class= "active" >Lezioni</li>
+            <li><a href="lezioni.html">Lezioni</a></li>
             <li><a href="esami.html">Esami</a></li>
             <li><a href="contatti.html">Contatti</a></li>
         </ul>
     </div>
     <div id="corpo">
-	    
+        <h2 class="centered">Pagina di autenticazione</h2>
+        <p class="centered">Inserisci le credenziali per entrare: </p>
+        <form id="loginForm" method="post">
+            <label for="email">email</label>
+            <input type="text" name="email" />
+            <label for="psw">password</label>
+            <input type="password" name="psw" />
+            <input type="submit" value="Login" />
+        </form>
+        
 
     </div>
     <div id="footer">

@@ -13,7 +13,7 @@
     <link type="text/css" rel="stylesheet" href="small.css" media="hendheld, screen and(max-width:480px), only screen and(max-device-width:480px)"/>
     <link href="style/print.css" rel="stylesheet" type="text/css" media="print"/>
     
-  
+    <script type="text/javascript" src="ultima_modifica.js"></script>
 </head>
 <body>
     <div id="header">
@@ -46,13 +46,46 @@
             <input type="password" name="psw" />
             <input type="submit" value="Login" />
         </form>
-        
 
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $db = "Tecweb";
+    
+    $conn = new mysqli($servername, $username, $password, $db);
+
+    //check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    echo "connection successfully";
+    
+    
+
+    /*
+    $sql = "SELECT Nome FROM docenti";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "nome " . $row["Nome"] . "<br />";
+        }
+    }
+    else {
+        echo "No result";
+    }
+   */
+    
+    $conn->close();
+    ?>
+        
+        
     </div>
     <div id="footer">
         <img src="img/css.bmp" class="valid" alt="CSS Valid!"/>
         <img src="img/xhtml.bmp" class="valid" alt="XHTML 1.0 Valid!"/>
-        Ultima modifica: <script type="text/javascript"  src="ultima_modifica.js"></script>
+        <span id="lastModify">Ultima modifica: </span><script type="text/javascript">lastModify()</script>
     </div>
 </body>
 </html>

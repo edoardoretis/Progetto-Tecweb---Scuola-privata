@@ -2,6 +2,8 @@
 SET foreign_key_checks=0;
 
 USE Tecweb;
+
+DROP TABLE IF EXISTS admin;
 DROP TABLE IF EXISTS lezioni;
 DROP TABLE IF EXISTS docenti;
 DROP TABLE IF EXISTS admin;

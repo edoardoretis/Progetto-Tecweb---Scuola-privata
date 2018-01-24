@@ -128,21 +128,32 @@ li.active{
     /*border: 2px solid rgb(0, 102, 255); */
 }
 
+#loginForm label {
+    margin-top: 3%;
+}
+
 #loginForm input {
     font-size: 1em;
-    display: block;
+    display: inline-block;
     width: 90%;
     margin: auto;
     padding: 1.5%;
-    margin-bottom: 5%;
     background-color: rgb(248, 210, 104);
+}
+
+.error {
+    color: #dd0000;
 }
 
 #loginForm label {
     display: block;
     text-align: center;
     margin-bottom: 2%;
-} 
+}
+
+#loginForm input[type="submit"] {
+    margin-top: 5%;
+}
 
 #corpo h2.centered {
     text-align: center;

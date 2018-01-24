@@ -1,5 +1,7 @@
 USE Tecweb;
 
+INSERT INTO admin VALUES("admin", "giovanni85x01");
+
 /*tabella corsi*/
 INSERT INTO corsi VALUES("B0", "Base", "50", "2017-10-01", "2017-10-31");
 INSERT INTO corsi VALUES("B1", "Intermedio", "100", "2017-10-01", "2018-01-25");

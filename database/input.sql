@@ -1,4 +1,4 @@
-USE Tecweb;
+USE tgranzie;
 
 INSERT INTO admin VALUES("admin", "giovanni85x01");
 

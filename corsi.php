@@ -20,7 +20,7 @@ include("presets/header.php"); //include la prima parte della pagina
         </ul>
     </div>
     <div id="corpo">
-      <h2>CORSI EROGATI</h2>
+      <h2>I nostri corsi</h2>
       <dl>
         <dt>Inglese</dt>
         <dd>Corso incentrato nell'insegnamento della lingua Inglese. Il corso viene tenuto da docenti preparati e viene erogato principalmente in lingua inglese. <br />

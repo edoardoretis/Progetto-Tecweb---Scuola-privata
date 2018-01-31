@@ -5,6 +5,13 @@ $server = "localhost";
 $serverUser = "root";
 $serverPassword = "";
 $db = "Tecweb";
+/*
+Per accedere dal server:
+$server = "localhost";
+$serverUser = "tgranzie";
+$serverPassword = "Yaiyahqu9guz9oox";
+$db = "tgranzie";
+*/
 $conn = new mysqli($server,$serverUser,$serverPassword,$db);
 
 function validate_input($var) {

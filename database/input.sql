@@ -6,7 +6,7 @@ INSERT INTO admin VALUES("admin", "giovanni85x01");
 INSERT INTO corsi VALUES("B0", "Base", "50", "2017-10-01", "2017-10-31");
 INSERT INTO corsi VALUES("B1", "Intermedio", "100", "2017-10-01", "2018-01-25");
 INSERT INTO corsi VALUES("B2", "Avanzato", "200", "2018-02-05", "2018-07-20");
-INSERT INTO corsi VALUES("M1", "Madrelingua", "500", "2017-10-01", "2018-09-31");
+INSERT INTO corsi VALUES("M1", "Madrelingua", "500", "2017-10-01", "2018-09-30");
 
 /*tabella docenti fatta da id docente, psw, nome, cognome,data di nascita, email, residenza, id corso*/
 INSERT INTO docenti VALUES ("BSCCHR75R61C638E", "Chiara", "Boscolo", "1975-10-21", "chiara.boscolo@gmail.com", "Via Marco Polo 45, Sottomarina", "chiara75", "B0");

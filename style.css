@@ -113,7 +113,8 @@ li.active{
 	max-width:30%;
 	margin: auto;
 	display: block;
-	padding-bottom: 10px;
+	margin-bottom: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 8px 21px 0 rgba(0, 0, 0, 0.29);
 }
 	
 #corpo p {

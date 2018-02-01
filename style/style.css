@@ -2,7 +2,6 @@ body {
     font-style: arial verdana sans-serif;
     font-size: 18px;
     width: 70%;
-    height: 700px;
     margin: auto;
     padding: 0;
     background-color: rgb(228, 228, 228);
@@ -28,6 +27,13 @@ h1 {
 
 #header h2 {
     font-variant: small-caps;
+}
+#header img{
+	float: left;
+	max-width:15%;
+	margin-top: 10px;
+	margin-left: 20px;
+	border: 2px solid white;
 }
 
 /*no underline for links*/
@@ -58,8 +64,8 @@ a {
 	font-size: 1.1em;
 	font-variant: small-caps;
 	float: left;
-	background-color: rgb(0, 102, 255);
-	height: 61%;
+	background-color: rgb(228, 228, 228);
+	
 	border-radius: 0 0 10px 10px
 }
 
@@ -72,7 +78,7 @@ a {
 #nav li a, li.active {
     display: block;
     padding: 1em;
-    color: #fff;
+    color: none ;
     border-radius: 5px;
 }
 
@@ -85,19 +91,40 @@ li.active{
     color: #dd0000;
 }
 
-#nav li a:hover, li.active:hover {
-    background-color: white;
-    color: #dd0000;
+#nav li a:hover {
+    background-color: rgb(0, 102, 255) ;
+    color: white;
 }
 
 #corpo {
-    margin-left: 130px;
-    font-family: "arial";
+	
+    margin-left: 120px;
+	font-family: "arial";
+	border-left: 1px solid black;
 }
 
 #corpo h2 {
-	margin-top: 5px;
+	margin-top:2px;
 	text-align: center;
+	color: rgb(0, 102, 255);
+	
+}
+#corpo img{
+	max-width:30%;
+	margin: auto;
+	display: block;
+	margin-bottom: 15px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 8px 21px 0 rgba(0, 0, 0, 0.29);
+}
+	
+#corpo p {
+	margin-left: 2%;
+}
+
+#corpo h3{
+	margin-left: 10px;
+	
+	
 }
 
 #login {
@@ -112,12 +139,16 @@ li.active{
     bottom: 7.5%;
     left: 0;
     padding: 15px;
-    padding-left: 95.906px;
     background-color: rgb(0, 102, 255);
     border-radius: 0 0 10px 10px;
     z-index: -1;
+	color:white;
 }
 
+#footer img{
+	float: left;
+	margin-right: 10px;
+}
 
 /* login.php */
 #loginForm {

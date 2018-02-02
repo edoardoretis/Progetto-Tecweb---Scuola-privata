@@ -1,6 +1,7 @@
 
 <?php 
-include("presets/header.php"); //include la prima parte della pagina
+    session_start();
+    include("presets/header.php"); //include la prima parte della pagina
 ?>
 
     <div id="path">Ti trovi in: <span xml:lang="en">Home</span> &gt;&gt; Corsi

@@ -1,5 +1,6 @@
 
 <?php 
+    session_start();
     include("presets/header.php"); //include la prima parte della pagina
 ?>
 

@@ -1,9 +1,9 @@
 body {
     font-style: arial verdana sans-serif;
-    font-size: 18px;
+    font-size: 1em;
     width: 70%;
     margin: auto;
-    margin-bottom: 25px;
+    margin-bottom: 4px;
     margin-top: 3px;
     padding: 0;
     background-color: rgb(228, 228, 228);
@@ -14,7 +14,7 @@ body {
 /*header style*/
 #header, h1 a {
     background-color: rgb(0, 102, 255);
-    padding: 15px;
+    padding: 0.5em;
     color: #fff;
     text-align: center;
 }
@@ -30,9 +30,10 @@ h1 {
 #header h2 {
     font-variant: small-caps;
 }
+
 #header img{
 	float: left;
-	max-width:15%;
+	max-width: 8.5em;
 	margin-top: 10px;
 	margin-left: 20px;
 	border: 2px solid white;
@@ -66,8 +67,7 @@ a {
 	font-size: 1.1em;
 	font-variant: small-caps;
 	float: left;
-	background-color: rgb(228, 228, 228);
-	
+	background-color: rgb(228, 228, 228);	
 	border-radius: 0 0 10px 10px
 }
 
@@ -88,7 +88,7 @@ a {
     border-radius: 0 0 5px 5px;
 }
 
-li.active{ 
+li.active { 
     background-color: white;
     color: #dd0000;
 }
@@ -99,19 +99,20 @@ li.active{
 }
 
 #corpo {
-	
     margin-left: 120px;
 	font-family: "arial";
 	border-left: 1px solid black;
 }
 
 #corpo h2 {
-	margin-top:2px;
+    margin-top: 0.6em;
+    font-size: 1.8em;
+    margin-bottom: 0.3em;
 	text-align: center;
 	color: rgb(0, 102, 255);
-	
 }
-#corpo img{
+
+#corpo img {
 	max-width:30%;
 	margin: auto;
 	display: block;
@@ -120,13 +121,20 @@ li.active{
 }
 	
 #corpo p {
-	margin-left: 2%;
+    margin: 6%;
+    line-height: 1.6;
+    word-spacing: 0.1em;
+    margin-top: 0.3em;
 }
 
-#corpo h3{
-	margin-left: 10px;
-	
-	
+#corpo li {
+    line-height: 1.6;
+    word-spacing: 0.1em;
+}
+
+#corpo h3 {
+    color: rgb(0, 102, 255);
+	margin-left: 0.7em;
 }
 
 #login {
@@ -149,10 +157,10 @@ li.active{
 
 #footer img{
 	float: left;
-	margin-right: 10px;
+    margin-right: 0.7em;
 }
 
-/* login.php */
+/* login e form */
 #loginForm {
     display: block;
     margin: auto;
@@ -174,10 +182,6 @@ li.active{
     background-color: rgb(248, 210, 104);
 }
 
-.error {
-    color: #dd0000;
-}
-
 #loginForm label {
     display: block;
     text-align: center;
@@ -186,13 +190,47 @@ li.active{
 
 #loginForm input[type="submit"] {
     margin-top: 5%;
+    margin-left: 1.5%;
 }
 
-#corpo h2.centered {
-    text-align: center;
+.error {
+    color: #dd0000;
+}
+
+fieldset {
+    border: none;
 }
 
 .centered {
     text-align: center;
 }
 
+.listTitle {
+    list-style: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.listTitle>li {
+    margin-bottom: 0.8em;
+}
+
+.listTitle ul li {
+    font-weight: normal;
+    font-size: 1em;
+}
+
+#prenotazione {
+    display: inline-block;
+    margin-left: 3.4em;
+    padding: 1em;
+    font-size: 1.2em;
+    border: 3px solid rgb(0, 102, 255);
+    margin-bottom: 2%;
+    border-radius: 8px;
+}
+
+#prenotazione:hover {
+    color: #fff;
+    background-color: rgb(0, 102, 255);
+}

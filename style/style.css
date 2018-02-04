@@ -34,8 +34,8 @@ h1 {
 #header img{
 	float: left;
 	max-width: 8.5em;
-	margin-top: 10px;
-	margin-left: 20px;
+	margin-top: 0.5em;
+	margin-left: 1em;
 	border: 2px solid white;
 }
 
@@ -121,7 +121,8 @@ li.active {
 }
 	
 #corpo p {
-    margin: 6%;
+    margin-left: 6%;
+    margin-right: 6%;
     line-height: 1.6;
     word-spacing: 0.1em;
     margin-top: 0.3em;
@@ -161,6 +162,7 @@ li.active {
 }
 
 /* login e form */
+
 #loginForm {
     display: block;
     margin: auto;
@@ -208,7 +210,6 @@ fieldset {
 .listTitle {
     list-style: none;
     font-weight: bold;
-    font-size: 1.1em;
 }
 
 .listTitle>li {
@@ -233,4 +234,44 @@ fieldset {
 #prenotazione:hover {
     color: #fff;
     background-color: rgb(0, 102, 255);
+}
+
+#prenotationForm {
+    position: relative;
+}
+
+#prenotationForm label {
+    margin-top: 3%;
+}
+
+#prenotationForm input {
+    font-size: 1em;
+    display: inline-block;
+    padding: 0.5%;
+    background-color: rgb(248, 210, 104);
+}
+
+#prenotationForm label {
+    display: block;
+    margin-top: 2%;
+}
+
+#prenotationForm input[type="submit"] {
+    position: relative;
+    display: block;
+    padding: 1%;
+    margin-top: 2%;
+}
+
+#prenotationForm select {
+    font-size: 1em;
+    display: inline-block;
+    padding: 0.5%;
+    background-color: rgb(248, 210, 104);
+}
+
+.formProcessed {
+    color: red;
+    font-weight: bold; 
+    font-size: 1.5em;
 }

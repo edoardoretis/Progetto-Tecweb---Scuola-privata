@@ -1,37 +1,52 @@
 <?php 
     session_start();
+    $title = "Area prenotazioni";
     if (!isset($_SESSION["user"]))
         header("Location: lezioni.php");
     
     include("presets/header.php");
+    include("presets/menu.php");
 ?>
 
-    <div id="path">Ti trovi in: Area prenotazione
-    <?php 
-        include("scripts/benvenuto.php");
-    ?>
-    </div>
-
-    <div id="nav">
-        <a href="#corpo" id="skipNav">Salta la navigazione</a> <!-- position: absolute; height: 0; overflow: hidden; -->        
-        <ul>
-            <li><a href="home.php" tabindex="1"><span xml:lang="en">Home</span></a></li>
-            <li><a href="corsi.php" tabindex="2">Corsi</a></li>
-            <li><a href="lezioni.php" tabindex="3">Lezioni</a></li>
-            <li><a href="esami.php" tabindex="4">Esami</a></li>
-            <li><a href="contatti.php" tabindex="5">Contatti</a></li>
-        </ul>
-    </div>
     <div id="corpo">
         <h2>Area prenotazione lezioni</h2>
-        <form method="get" action="validate_prenotation.php">
+        <form method="post" action="scripts/validate_prenotation.php" id="prenotationForm">
         <fieldset>
+            <select name="tipoLezione" size="1">
+                <option value="B0">corso Base</option>
+                <option value="B1">corso Intermedio</option>
+                <option value="B2">corso Avanzato</option>
+                <option value="M1">corso Madrelingua</option>
+            </select>
 
+            <label for="aula">Aula</label>
+            <select name="aula" size="1">
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A3</option>
+                <option value="A4">A4</option>
+                <option value="A5">A5</option>
+                <option value="A6">A6</option>
+                <option value="A7">A7</option>
+                <option value="A8">A8</option>
+            </select>
+
+            <label for="dataLezione">Data</label>
+            <input type="date" name="dataLezione" />
+
+            <label for="oraInizio">Inizio lezione</label>
+            <input type="time" name="oraInizio" />
+
+            <label for="oraFine">Fine lezione</label>
+            <input type="time" name="oraFine" />
+
+            <input type="submit" value="Prenota" />
         </fieldset>
         </form>
     </div>
-    <?php
+
+<?php
     include("presets/footer.php"); 
-    ?>
+?>
 </body>
 </html>

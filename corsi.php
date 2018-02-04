@@ -1,25 +1,13 @@
 
 <?php 
     session_start();
-    include("presets/header.php"); //include la prima parte della pagina
-?>
-
-    <div id="path">Ti trovi in: <span xml:lang="en">Home</span> &gt;&gt; Corsi
-    <?php 
-        include("scripts/benvenuto.php");
-    ?>
-    </div>
     
-    <div id="nav">
-        <a href="#corpo" id="skipNav">Salta la navigazione</a> <!-- position: absolute; height: 0; overflow: hidden; -->
-        <ul>
-            <li><a href="home.php"><span xml:lang="en">Home</span></a></li>
-            <li class="active" >Corsi</li>
-            <li><a href="lezioni.php">Lezioni</a></li>
-            <li><a href="esami.php">Esami</a></li>
-            <li><a href="contatti.php">Contatti</a></li>
-        </ul>
-    </div>
+    $title = "Corsi";
+    include("presets/header.php"); //include la prima parte della pagina
+    
+    $activeItem = 1;
+    include("presets/menu.php");
+?>
     <div id="corpo">
       <h2>I nostri corsi</h2>
       <dl>
@@ -32,10 +20,8 @@
             
 
     </div>
-    <div id="footer">
-        <img src="img/css.bmp" class="valid" alt="CSS Valid!"/>
-        <img src="img/xhtml.bmp" class="valid" alt="XHTML 1.0 Valid!"/>
-        <span id="lastModify">Ultima modifica: </span><script type="text/javascript">lastModify()</script>
-    </div>
+<?php
+    include("presets/footer.php"); 
+?>
 </body>
 </html>

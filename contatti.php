@@ -15,7 +15,7 @@
 			<li>Indrizzo: Via Trieste, 63 - 35121 Padova (<span xml:lang="en">Italy</span>)</li>
 			<li>Telefono:  +39 049 827 1200</li>
 			<li>Fax: +39 049 827 1499</li>
-			<li>Email: englishword@gmail.com</li>
+			<li>Email: englishworld@gmail.com</li>
 		</ul>
 
         <h3> Come raggiungerci</h3>

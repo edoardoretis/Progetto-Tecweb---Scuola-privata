@@ -56,7 +56,7 @@ CREATE TABLE lezioni (
     OraInizio datetime,
     OraFine datetime,
     
-    PRIMARY KEY(OraInizio, OraFine),
+    PRIMARY KEY(OraInizio, OraFine, idAula),
     FOREIGN KEY(IdDocente) REFERENCES docenti(IdDocente) ON UPDATE CASCADE,
     FOREIGN KEY(IdCorso) REFERENCES corsi(IdCorso),
     FOREIGN KEY(IdAula) REFERENCES aule(IdAula)

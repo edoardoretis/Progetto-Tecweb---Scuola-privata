@@ -10,6 +10,11 @@
 
     <div id="corpo">
         <h2>Area prenotazione lezioni</h2>
+        <?php
+            if (isset($_SESSION["prenErr"]))
+                echo "<p class='formProcessed'>" . $_SESSION["prenErr"] . "</p>";
+            unset($_SESSION["prenErr"]);  
+        ?>
         <form method="post" action="scripts/validate_prenotation.php" id="prenotationForm">
         <fieldset>
             <select name="tipoLezione" size="1">
@@ -32,13 +37,13 @@
             </select>
 
             <label for="dataLezione">Data</label>
-            <input type="date" name="dataLezione" />
+            <input type="date" name="dataLezione" value="<?php //if(isset($_POST["dataLezione"])) echo $_POST["dataLezione"]; ?>" />
 
             <label for="oraInizio">Inizio lezione</label>
-            <input type="time" name="oraInizio" />
+            <input type="time" name="oraInizio" value="<?php //if(isset($_POST["oraInizio"])) echo $_POST["oraInizio"]; ?>"/>
 
             <label for="oraFine">Fine lezione</label>
-            <input type="time" name="oraFine" />
+            <input type="time" name="oraFine" value="<?php //if(isset($_POST["oraFine"])) echo $_POST["oraFine"]; ?>" />
 
             <input type="submit" value="Prenota" />
         </fieldset>

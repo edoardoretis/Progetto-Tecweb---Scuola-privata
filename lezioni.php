@@ -38,6 +38,7 @@
         $corsoIntermedio = array();
         $corsoAvanzato = array();
         $corsoMadreLingua = array();
+
         while ($row = $result->fetch_assoc()) {
             if ($row["Nomecorso"] == "Base")
                 array_push($corsoBase, $row);
@@ -60,17 +61,17 @@
         
         echo "<ul class='listTitle'><li>Corso Base:</h3>" . "<ul>";
         
-        $oraAttuale = strtotime(date("d/m/y"));
+        $oraAttuale = strtotime(date("d/m/y G:i:s"));
 
         foreach($corsoBase as $i) {
             $inizio = strtotime($i["OraInizio"]);
             $fine = strtotime($i["OraFine"]);
 
-            if ($oraAttuale < $inizio) {
+            // if ($oraAttuale < $inizio) {
                 echo "<li>" . date("d/m/y", $inizio) . " ";
                 echo "Aula " . $i["idAula"] . ", dalle " . date("G:i", $inizio) . 
                     ' alle ' . date("G:i", $fine) . ";</li>";
-            }
+            // }
         }
 
         echo "</li></ul><li>Corso Intermedio:" . "<ul>";
@@ -78,11 +79,11 @@
             $inizio = strtotime($i["OraInizio"]);
             $fine = strtotime($i["OraFine"]);
 
-            if ($oraAttuale < $inizio) {
+            // if ($oraAttuale < $inizio) {
                 echo "<li>" . date("d/m/y", $inizio) . " ";
                 echo "Aula " . $i["idAula"] . ", dalle " . date("G:i", $inizio) . 
                     ' alle ' . date("G:i", $fine) . ";</li>";
-            }
+            // }
         }
 
         echo "</li></ul><li>Corso Avanzato:" . "<ul>";
@@ -90,11 +91,11 @@
             $inizio = strtotime($i["OraInizio"]);
             $fine = strtotime($i["OraFine"]);
 
-            if ($oraAttuale < $inizio) {
+            // if ($oraAttuale < $inizio) {
                 echo "<li>" . date("d/m/y", $inizio) . " ";
                 echo "Aula " . $i["idAula"] . ", dalle " . date("G:i", $inizio) . 
                     ' alle ' . date("G:i", $fine) . ";</li>";
-            }
+            // }
         }
 
         echo "</li></ul><li>Corso Madre Lingua:" . "<ul>";
@@ -102,11 +103,11 @@
             $inizio = strtotime($i["OraInizio"]);
             $fine = strtotime($i["OraFine"]);
 
-            if ($oraAttuale < $inizio) {
+            // if ($oraAttuale < $inizio) {
                 echo "<li>" . date("d/m/y", $inizio) . " ";
                 echo "Aula " . $i["idAula"] . ", dalle " . date("G:i", $inizio) . 
                     ' alle ' . date("G:i", $fine) . ";</li>";
-            }
+            // }
         }
 
         echo "</ul></li></ul>";

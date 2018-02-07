@@ -26,22 +26,23 @@ if ($conn->connect_error)
 // }
 
 //form non impostato correttamente
-if (!isset($_POST["tipoLezione"]) || !isset($_POST["dataLezione"]) 
-    || !isset($_POST["oraInizio"]) || !isset($_POST["oraFine"])
-    || $_POST["tipoLezione"] == "" || $_POST["dataLezione"] == ""
-    || $_POST["oraInizio"] == "" || $_POST["oraFine"])
+if (!isset($_POST["tipoEsame"]) || !isset($_POST["dataEsame"]) 
+|| !isset($_POST["oraInizio"]) || !isset($_POST["oraFine"])
+|| $_POST["tipoEsame"] == "" || $_POST["dataEsame"] == ""
+|| $_POST["oraInizio"] == "" || $_POST["oraFine"])
 {
     $_SESSION["prenErr"] = "Compila tutti i campi.";
-    header("Location: ../prenotazioni.php");
+    header("Location: ../prenotazioni_esami.php");
 }
+    
 
 //prenotazione antecedente, non valida
-if (date('m/d/y') > $_POST["dataLezione"])
+if (date('m/d/y') > $_POST["dataEsame"])
     echo "ERRORE";
 
 //dati relativi alle ore in formate datetime di MYSQL
-$oraInizio = $_POST["dataLezione"] . ' ' . $_POST["oraInizio"];
-$oraFine = $_POST["dataLezione"] . ' ' . $_POST["oraFine"];
+$oraInizio = $_POST["dataEsame"] . ' ' . $_POST["oraInizio"];
+$oraFine = $_POST["dataEsame"] . ' ' . $_POST["oraFine"];
 
 //aula
 $aula = $_POST["aula"];
@@ -64,7 +65,7 @@ if ($res->num_rows > 0) {
             if ($strTimeInizio >= $strTimeFine) {
                 $ok = false;
                 $_SESSION["prenErr"] = "Prenotazione non effettuata. Imposta una fascia oraria valida.";
-                header("Location: ../prenotazioni.php");
+                header("Location: ../prenotazioni_esami.php");
             }
 
             if (($strTimeInizio < strtotime($row["OraFine"]) && $strTimeInizio > strtotime($row["OraInizio"])) //oraInizio inclusa in una fascia oraria occupata
@@ -72,7 +73,7 @@ if ($res->num_rows > 0) {
             {
                 $ok = false;
                 $_SESSION["prenErr"] = "Prenotazione non effettuata. Orario non disponibile.";
-                header("Location: ../prenotazioni.php");
+                header("Location: ../prenotazioni_esami.php");
             }
         }
     } //while
@@ -109,7 +110,7 @@ if ($res->num_rows > 0) {
 
 if ($ok) {
     //parsing corso
-    $corso = $_POST["tipoLezione"];
+    $corso = $_POST["tipoEsame"];
     $sql = "SELECT idCorso FROM corsi WHERE Nomecorso=\"$corso\"";
     $res = $conn->query($sql) or die($conn->error);
     while ($row = $res->fetch_assoc()) {
@@ -125,13 +126,13 @@ if ($ok) {
     }
 
     //inserimento nel db
-    $sql = "INSERT INTO lezioni VALUES(\"$idDocente\", \"$corso\", \"$aula\", \"$oraInizio\", \"$oraFine\")";
+    $sql = "INSERT INTO esami VALUES(\"$idDocente\", \"$corso\", \"$aula\", \"$oraInizio\", \"$oraFine\")";
     if ($conn->query($sql) !== TRUE) {
         die("Error: ". $sql . "<br />" . $conn->error);
     }
     else {
         $_SESSION["prenotazioneOk"] = "PRENOTAZIONE CREATA CON SUCCESSO!";
-        header("Location: ../lezioni.php");
+        header("Location: ../esami.php");
     }
 }
 

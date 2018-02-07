@@ -26,7 +26,6 @@ h1 {
     font-variant: small-caps;
 }
 
-
 #header h2 {
     font-variant: small-caps;
 }
@@ -42,6 +41,10 @@ h1 {
 /*no underline for links*/
 a {
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 
@@ -82,6 +85,7 @@ a {
     padding: 1em;
     color: none ;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 #nav li:first-child {
@@ -214,16 +218,19 @@ fieldset {
 
 .listTitle>li {
     margin-bottom: 0.8em;
+    color: rgb(0, 102, 255);
 }
 
 .listTitle ul li {
     font-weight: normal;
     font-size: 1em;
+    color: #000;
 }
 
 #prenotazione {
     display: inline-block;
     margin-left: 3.4em;
+    text-decoration: none;
     padding: 1em;
     font-size: 1.2em;
     border: 3px solid rgb(0, 102, 255);

@@ -19,13 +19,13 @@ CREATE TABLE corsi (
 
     PRIMARY KEY(IdCorso)
 );
-
+/*
 CREATE TABLE admin (
     idAdmin varchar(255) UNIQUE,
     Psw varchar(255) UNIQUE,
 
     PRIMARY KEY(idAdmin)
-);
+);*/
 
 CREATE TABLE docenti (
     IdDocente varchar(16),
@@ -50,6 +50,19 @@ CREATE TABLE aule (
 );
 
 CREATE TABLE lezioni (
+    IdDocente varchar(16),
+    IdCorso varchar(2),
+    IdAula varchar(2) NOT NULL,
+    OraInizio datetime,
+    OraFine datetime,
+    
+    PRIMARY KEY(OraInizio, OraFine, idAula),
+    FOREIGN KEY(IdDocente) REFERENCES docenti(IdDocente) ON UPDATE CASCADE,
+    FOREIGN KEY(IdCorso) REFERENCES corsi(IdCorso),
+    FOREIGN KEY(IdAula) REFERENCES aule(IdAula)
+);
+
+CREATE TABLE esami (
     IdDocente varchar(16),
     IdCorso varchar(2),
     IdAula varchar(2) NOT NULL,

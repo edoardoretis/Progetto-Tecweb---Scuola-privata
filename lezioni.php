@@ -9,7 +9,14 @@
     include("presets/menu.php");
 ?>
     <div id="corpo">
-        <h2>Orari delle lezioni</h2>
+    <h2>Orari delle lezioni</h2>
+    <?php
+    if (isset($_SESSION["prenotazioneOk"])) {
+        echo "<p class='formProcessed'>" . $_SESSION["prenotazioneOk"] . "</p>";
+        unset($_SESSION["prenotazioneOk"]);
+    }
+    ?>
+    <p>Qui puoi vedere <?php if(isset($_SESSION["user"])) echo " e <a class='stdLink' href='prenotazioni.php'>prenotare</a> "?> gli orari delle lezioni.</p>
 
     <?php 
     $server = "localhost";
@@ -50,16 +57,11 @@
                 array_push($corsoMadreLingua, $row);
         }
         $conn->close();
-        
-        if (isset($_SESSION["prenotazioneOk"])) {
-            echo "<p class='formProcessed'>" . $_SESSION["prenotazioneOk"] . "</p>";
-            unset($_SESSION["prenotazioneOk"]);
-        }
 
 
         //script presente per non stampare lezioni i cui orari sono già passati
         
-        echo "<ul class='listTitle'><li>Corso Base:</h3>" . "<ul>";
+        echo "<ul class='listTitle'><li>Corso Base</h3>" . "<ul>";
         
         $oraAttuale = strtotime(date("d/m/y G:i:s"));
 
@@ -74,7 +76,7 @@
             // }
         }
 
-        echo "</li></ul><li>Corso Intermedio:" . "<ul>";
+        echo "</li></ul><li>Corso Intermedio" . "<ul>";
         foreach($corsoIntermedio as $i) {
             $inizio = strtotime($i["OraInizio"]);
             $fine = strtotime($i["OraFine"]);
@@ -86,7 +88,7 @@
             // }
         }
 
-        echo "</li></ul><li>Corso Avanzato:" . "<ul>";
+        echo "</li></ul><li>Corso Avanzato" . "<ul>";
         foreach($corsoAvanzato as $i) {
             $inizio = strtotime($i["OraInizio"]);
             $fine = strtotime($i["OraFine"]);
@@ -98,7 +100,7 @@
             // }
         }
 
-        echo "</li></ul><li>Corso Madre Lingua:" . "<ul>";
+        echo "</li></ul><li>Corso Madrelingua" . "<ul>";
         foreach($corsoMadreLingua as $i) {
             $inizio = strtotime($i["OraInizio"]);
             $fine = strtotime($i["OraFine"]);
@@ -114,7 +116,7 @@
     }
 
     else 
-        echo "<p>Non ci sono lezioni prenotate.</p>";
+        echo "<p>Non ci sono esami prenotati.</p>";
 
     if (isset($_SESSION["user"])) {
         echo "<a id='prenotazione' href='prenotazioni.php'>Prenota una lezione</a>";

@@ -141,6 +141,11 @@ li.active {
     color: rgb(0, 102, 255);
 	margin-left: 0.7em;
 }
+#corpo dt{
+	margin-left: 2%;
+	color: rgb(0, 102, 255);
+}
+
 
 #login {
     float: right;

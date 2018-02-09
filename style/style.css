@@ -110,21 +110,31 @@ li.active {
 
 #corpo h2 {
     margin-top: 0.6em;
-    font-size: 1.8em;
+    font-size: 2em;
     margin-bottom: 0.3em;
 	text-align: center;
 	color: rgb(0, 102, 255);
 }
 
+#corpo h3 {
+    margin-top: 0.6em;
+    font-size: 1.5em;
+    margin-bottom: 0.3em;
+    text-align: left;
+    color: rgb(0, 102, 255);
+    margin-left: 6%;
+}
+
 #corpo img {
-	max-width:30%;
+    max-width: 70%;
 	margin: auto;
 	display: block;
-	margin-bottom: 15px;
+    margin-bottom: 3%;
+    margin-top: 3%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 8px 21px 0 rgba(0, 0, 0, 0.29);
 }
 	
-#corpo p {
+#corpo p, dt, dd {
     margin-left: 6%;
     margin-right: 6%;
     line-height: 1.6;
@@ -132,20 +142,21 @@ li.active {
     margin-top: 0.3em;
 }
 
+.marginsLeft {
+    margin-right: 6%;
+}
+
 #corpo li {
     line-height: 1.6;
     word-spacing: 0.1em;
 }
 
-#corpo h3 {
-    color: rgb(0, 102, 255);
-	margin-left: 0.7em;
-}
-#corpo dt{
-	margin-left: 2%;
+#corpo dt {
+    margin-top: 3%;
+    font-weight: bold;
+    font-size: 1.1em;
 	color: rgb(0, 102, 255);
 }
-
 
 #login {
     float: right;
@@ -165,7 +176,7 @@ li.active {
 	color:white;
 }
 
-#footer img{
+#footer img {
 	float: left;
     margin-right: 0.7em;
 }
@@ -224,6 +235,7 @@ fieldset {
 .listTitle>li {
     margin-bottom: 0.8em;
     color: rgb(0, 102, 255);
+    font-size: 1em;
 }
 
 .listTitle ul li {
@@ -286,4 +298,13 @@ fieldset {
     color: red;
     font-weight: bold; 
     font-size: 1.5em;
+}
+
+
+/*Google Maps*/
+
+#map {
+    margin: auto;
+    height: 400px;
+    width: 88%;
 }

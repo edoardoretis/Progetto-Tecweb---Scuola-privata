@@ -14,12 +14,13 @@
         La Scuola prevede un approccio dinamico, differenziato, stimolante e gratificante. Gli studenti sono supportati per esprimere al massimo il 
         loro potenziale con un'attenzione specifica al mantenimento e rinforzo positivo della loro autostima. Lo scopo della nostra scuola è dare ai 
         nostri studenti una padronanza della lingua inglese che li renda autosufficienti nel dialogo e nella comprensione della lingua.</p>
-	  <img src="img/img1.jpg" class="valid" alt="Immagine di abbellimento"/>
+      <img src="img/img1.jpg" class="valid" alt="Immagine di abbellimento" />
+      
       <h2>I nostri corsi</h2>
       <p>Ogni studente può scegliere il <a href="corsi.php">corso</a> che fa per lui, partendo da <em>corsi base</em>, <em>corsi intermedi</em>, <em>corsi avanzati</em> e <em>madrelingua</em>. 
         Ogni corso è tenuto da un docente madrelingua che punta ad insegnarvi i trucchi e la bellezza della lingua più usata al mondo.</br>
         Siamo sicuri che nella nostra scuola troverete il corso che fa al vostro caso e sarete soddisfatti del nostro lavoro!</p>
-	<img src="img/img2.jpg" class="valid" alt="Immagine di abbellimento"/>
+	<img src="img/img2.jpg" class="valid" alt="Immagine di abbellimento" />
     </div>
     
 <?php

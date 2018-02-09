@@ -23,7 +23,11 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     <img src="img/logo.jpg" class="valid" alt="Logo"/>
     <h1 xml:lang="en">English World</h1>
     <h2>Scuola privata di inglese per tutte le et&agrave;</h2>
-    <h2>Direttore: Dr. Rossi Mario</h2>
+    <h2';
+    if ($title != "Home")
+        echo ' style="visibility: hidden"'; 
+    
+    echo '>Direttore: Dr. Rossi Mario</h2>
     </div>';
 
     if ($title != "Home") 

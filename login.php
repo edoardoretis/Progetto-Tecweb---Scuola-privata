@@ -9,7 +9,7 @@
         <h2 class="centered">Pagina di autenticazione</h2>
         <p class="centered">Inserisci le credenziali per entrare: </p>
         
-        <form id="loginForm" method="POST" action="scripts/validate_form.php">
+        <form id="loginForm" method="post" action="scripts/validate_form.php">
         <fieldset>
             <?php echo '<span class="error">* required field.</span>' ?>
             <label for="email">Email</label>

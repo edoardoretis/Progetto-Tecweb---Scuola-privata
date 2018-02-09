@@ -41,9 +41,9 @@
 					<li> Rossi Antonio; <em>Per informazioni:</em> <a href="mailto:a.rossi@libero.it">a.rossi@libero.it</a></li>
 				</ul>
 			</dd>
-		
-		<img src="img/english_course2.jpg" alt="Immagine di abbellimento" class="bigImg" />
-
+		</dl>
+			<img src="img/english_course2.jpg" alt="Immagine di abbellimento" class="bigImg" />
+		<dl>
 		<dt>Corso Avanzato </dt>
 			<dd><strong>Contenuti:</strong> Comprende un’ampia gamma di testi complessi e lunghi e ne sa riconoscere il significato implicito. 
 			Si esprime con scioltezza e naturalezza. Usa la lingua in modo flessibile ed efficace per scopi sociali, professionali ed accademici. 

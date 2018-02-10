@@ -19,6 +19,10 @@ body {
     text-align: center;
 }
 
+.hMenu {
+    display: none;
+}
+
 h1 {
     font-family: "Courier";
     font-size: 3.5em;
@@ -30,7 +34,7 @@ h1 {
     font-variant: small-caps;
 }
 
-#header img{
+#header img {
 	float: left;
 	max-width: 8.5em;
 	margin-top: 0.5em;
@@ -171,7 +175,7 @@ li.active {
 	color: rgb(0, 102, 255);
 }
 
-#login {
+ #logout, #login {
     float: right;
     margin-right: 2%;
 }
@@ -240,8 +244,6 @@ fieldset {
     text-align: center;
 }
 
-
-
 #prenotazione {
     display: inline-block;
     margin-left: 3.4em;
@@ -306,3 +308,30 @@ fieldset {
     height: 400px;
     width: 88%;
 }
+
+/* clearfix */
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+} 
+.group:after {
+  clear: both;
+}
+.group {
+  zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+}
+
+@media screen and (max-width: 840px) {
+    #header img {
+        display: none;
+    }
+
+    #affiliation {
+        display: none;
+    }
+
+    #loginForm, #prenotationForm input {
+        width: 90%;
+    }
+} 

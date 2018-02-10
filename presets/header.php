@@ -17,7 +17,7 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     <link href="style/small.css" rel="stylesheet" type="text/css" media="handheld, screen and (max-width:480px), only screen and (max-device-width:480px)" /> 
     <link href="style/print.css" rel="stylesheet" type="text/css" media="print" />
 
-    <script type="text/javascript" src="ultima_modifica.js"></script>
+    <script type="text/javascript" src="scripts/ultima_modifica.js"></script>
     <script type="text/javascript" src="scripts/responsive_menu.js"></script>
 </head>
 

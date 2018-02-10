@@ -60,58 +60,59 @@
 
         //script presente per non stampare lezioni i cui orari sono già passati
         
-        echo "<ul class='listTitle'><li>Corso Base (B0)</h3>" . "<ul>";
-        
         $oraAttuale = strtotime(date("d/m/y G:i:s"));
 
+        echo "<h4>Corso Base (B0)</h4>\n";
+        echo "\t<ul>\n";
         foreach($corsoBase as $i) {
             $inizio = strtotime($i["OraInizio"]);
             $fine = strtotime($i["OraFine"]);
 
             // if ($oraAttuale < $inizio) {
-                echo "<li>" . date("d/m/y", $inizio) . " ";
+                echo "\t\t<li>" . date("d/m/y", $inizio) . " ";
                 echo "Aula " . $i["idAula"] . ", dalle " . date("G:i", $inizio) . 
-                    ' alle ' . date("G:i", $fine) . ";</li>";
+                    ' alle ' . date("G:i", $fine) . ";</li>\n";
             // }
         }
 
-        echo "</li></ul><li>Corso Intermedio (B1)" . "<ul>";
+        echo "\t</ul>\n";
+        echo "\t<h4>Corso Intermedio (B1)</h4>\n";
+        echo "\t<ul>\n";
         foreach($corsoIntermedio as $i) {
             $inizio = strtotime($i["OraInizio"]);
             $fine = strtotime($i["OraFine"]);
 
             // if ($oraAttuale < $inizio) {
-                echo "<li>" . date("d/m/y", $inizio) . " ";
+                echo "\t\t<li>" . date("d/m/y", $inizio) . " ";
                 echo "Aula " . $i["idAula"] . ", dalle " . date("G:i", $inizio) . 
-                    ' alle ' . date("G:i", $fine) . ";</li>";
+                    ' alle ' . date("G:i", $fine) . ";</li>\n";
             // }
         }
 
-        echo "</li></ul><li>Corso Avanzato (B2)" . "<ul>";
+        echo "\t</ul>\n\t<h4>Corso Avanzato (B2)</h4>\n" . "\t<ul>\n";
         foreach($corsoAvanzato as $i) {
             $inizio = strtotime($i["OraInizio"]);
             $fine = strtotime($i["OraFine"]);
 
             // if ($oraAttuale < $inizio) {
-                echo "<li>" . date("d/m/y", $inizio) . " ";
+                echo "\t\t<li>" . date("d/m/y", $inizio) . " ";
                 echo "Aula " . $i["idAula"] . ", dalle " . date("G:i", $inizio) . 
-                    ' alle ' . date("G:i", $fine) . ";</li>";
+                    ' alle ' . date("G:i", $fine) . ";</li>\n";
             // }
         }
 
-        echo "</li></ul><li>Corso Madrelingua (M2)" . "<ul>";
+        echo "\t</ul>\n\t<h4>Corso Madrelingua (M1)</h4>\n" . "\t<ul>\n";
         foreach($corsoMadreLingua as $i) {
             $inizio = strtotime($i["OraInizio"]);
             $fine = strtotime($i["OraFine"]);
 
             // if ($oraAttuale < $inizio) {
-                echo "<li>" . date("d/m/y", $inizio) . " ";
+                echo "\t\t<li>" . date("d/m/y", $inizio) . " ";
                 echo "Aula " . $i["idAula"] . ", dalle " . date("G:i", $inizio) . 
-                    ' alle ' . date("G:i", $fine) . ";</li>";
+                    ' alle ' . date("G:i", $fine) . ";</li>\n";
             // }
         }
-
-        echo "</ul></li></ul>";
+        echo "\t</ul>\n";
     }
 
     else 

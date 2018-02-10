@@ -125,6 +125,19 @@ li.active {
     margin-left: 6%;
 }
 
+#corpo h4 {
+    font-weight: bold;
+    margin-bottom: 0.8em;
+    color: rgb(0, 102, 255);
+    font-size: 1.1em;
+    margin-bottom: 0;
+    margin-left: 3%;
+}
+
+#corpo ul {
+    margin-top: 0;
+}
+
 #corpo img {
     max-width: 70%;
 	margin: auto;
@@ -227,22 +240,7 @@ fieldset {
     text-align: center;
 }
 
-.listTitle {
-    list-style: none;
-    font-weight: bold;
-}
 
-.listTitle>li {
-    margin-bottom: 0.8em;
-    color: rgb(0, 102, 255);
-    font-size: 1em;
-}
-
-.listTitle ul li {
-    font-weight: normal;
-    font-size: 1em;
-    color: #000;
-}
 
 #prenotazione {
     display: inline-block;

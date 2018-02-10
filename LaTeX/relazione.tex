@@ -56,11 +56,12 @@
 \tableofcontents 
 \pagebreak
 
-\section{Introduzione}
-
-\subsection{Abstract}
+\begin{abstract}
 Con questo progetto ci poniamo di illustrare le attività proposte da una scuola privata di lingua inglese. La nostra piattaforma dovrà dare tutte le informazioni che uno studente, di qualsiasi età, cercherà in un sito; allo stesso tempo dovrà dare strumenti facili ai docenti per inserire le informazioni sulle lezioni, aule usate e sugli esami.\par
 Ci saranno pagine dedicate ai corsi, per capire qual è il nostro livello di inglese; altre destinate alle lezioni e successivamente agli esami.
+\end{abstract}
+
+\section{Introduzione}
 
 \subsection{Utenti destinatari}
 Il sito internet sviluppato non vuole raggiungere una sola categoria di utenti, ma è destinato a chiunque cerchi una scuola di inglese.  Inoltre ogni utente potrà facilmente raccogliere le informazioni che cerca, sia che sia al primo accesso, sia un utente abituale del sito.\par
@@ -132,15 +133,15 @@ La parte relativa a PHP è piuttosto consistente. Nella cartella \textit{presets
 alcuni script che, se inclusi tramite il comando \texttt{include()} di PHP, generano dimanicamente
 una parte della pagina. \par
 \smallskip
-\textbf{header.php}, \textbf{footer.php} e \textbf{menu.php} generano rispettivamente la prima 
+Nei file \textbf{header.php}, \textbf{footer.php} e \textbf{menu.php} generano rispettivamente la prima 
 parte della pagina, il menu (assegnando dinamicamente valori di \texttt{tabindex} e la scheda attiva). \par
 \smallskip
 Nella cartella \textit{script}, sono presenti diversi script .php che eseguono controlli e comandi. Per interfacciarsi al database, si è scelto di utilizzare la libreria \texttt{mysqli}.\par
 \smallskip
-\textbf{benvenuto.php} è un semplice script che genera codice relativo al login: chiede di accedere
+In \textbf{benvenuto.php} è un semplice script che genera codice relativo al login: chiede di accedere
 in caso non ci sia un utente loggato, e da la possibilità di uscire in caso contrario. \textbf{logout.php} viene lanciato quando un utente loggato clicca su \texttt{Esci}. \par
-\textbf{validate\_form.php} serve a convalidare se il login avviene con successo o meno, e segnalare
-gli eventuali errori. \mbox{\textbf{validate\_prenotation.php}} e \mbox{\textbf{validate\_prenotation\_exams.php}} validano le prenotazioni relative rispettivamente alle lezioni e agli esami (per 
+Il file \textbf{validate\_form.php} serve a convalidare se il login avviene con successo o meno, e segnalare
+gli eventuali errori. Infine, \mbox{\textbf{validate\_prenotation.php}} e \mbox{\textbf{validate\_prenotation\_exams.php}} validano le prenotazioni relative rispettivamente alle lezioni e agli esami (per 
 evitare) sovrapposizioni), e in caso il controllo non riscontri problemi, le lezioni vengono inserite nel database.
 
 

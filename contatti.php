@@ -33,9 +33,15 @@
 			<li>Email: englishworld@gmail.com</li>
 		</ul>
 
-        <h3>Come raggiungerci</h3>
+		<h3>Come raggiungerci</h3>
 		<div id="map"></div>
-	
+	<!--[if lte IE 11]> 
+	<script type="text/javascript">
+		var gMap = document.getElementById("map").style;
+		gMap.display="none";
+	</script>
+	<![endif]-->
+
 		<script type="text/javascript" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7by0clulzGa2eB_ro8RArbIeom20hsTU&callback=initMap">
 	</script>
 

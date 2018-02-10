@@ -22,7 +22,7 @@
 			map: map
 		});
 	}
-    </script>
+	</script>	
 
     <div id="corpo">
 	    <h3>I nostri contatti</h3>
@@ -36,9 +36,9 @@
         <h3>Come raggiungerci</h3>
 		<div id="map"></div>
 	
-	<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7by0clulzGa2eB_ro8RArbIeom20hsTU&callback=initMap">
+		<script type="text/javascript" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7by0clulzGa2eB_ro8RArbIeom20hsTU&callback=initMap">
 	</script>
+
 
 		<ul class="marginsLeft">
 			<li><strong>Per chi arriva in auto:</strong> uscire dall'autostrada o tangenziale all'uscita di Padova Fiera e prendere direzione verso il centro. lungo la strada vedrete le insegne della nostra scuola e vicino un ampio parcheggio;</li>

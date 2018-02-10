@@ -1,48 +1,24 @@
 <?php
 session_start();
 
-$server = "localhost";
-$serverUser = "root";
-$serverPassword = "";
-$db = "Tecweb";
-/*
-Per accedere dal server:
-$server = "localhost";
-$serverUser = "tgranzie";
-$serverPassword = "Yaiyahqu9guz9oox";
-$db = "tgranzie";
-*/
-$conn = new mysqli($server,$serverUser,$serverPassword,$db);
+include("functions.php");
+include("connection.php");
 
-// Check connection
-if ($conn->connect_error)
-    die("Connection failed: " . $conn->connect_error);
+$_SESSION["dataPren"] = $_POST["dataEsame"];
+$_SESSION["oraInizioPren"] = $_POST["oraInizio"];
+$_SESSION["oraFinePren"] = $_POST["oraFine"];
 
-// function validate_input($var) {
-//     $var = trim($var);
-//     $var = stripslashes($var);
-//     $var = htmlspecialchars($var);
-//     return $var;
-// }
-
-//form non impostato correttamente
-if (!isset($_POST["tipoEsame"]) || !isset($_POST["dataEsame"]) 
-|| !isset($_POST["oraInizio"]) || !isset($_POST["oraFine"])
-|| $_POST["tipoEsame"] == "" || $_POST["dataEsame"] == ""
-|| $_POST["oraInizio"] == "" || $_POST["oraFine"])
+//validazione variabili POST
+if (!validateDate($_POST["dataEsame"]) || !validateTime($_POST["oraInizio"])
+    || !validateTime($_POST["oraFine"]))
 {
-    $_SESSION["prenErr"] = "Compila tutti i campi.";
-    header("Location: ../prenotazioni_esami.php");
+    $_SESSION["prenErr"] = "Prenotazione non effettuata. Imposta un formato corretto dei campi.";    
+    header("Location: ../prenotazioni.php");
 }
-    
-
-//prenotazione antecedente, non valida
-if (date('m/d/y') > $_POST["dataEsame"])
-    echo "ERRORE";
 
 //dati relativi alle ore in formate datetime di MYSQL
-$oraInizio = $_POST["dataEsame"] . ' ' . $_POST["oraInizio"];
-$oraFine = $_POST["dataEsame"] . ' ' . $_POST["oraFine"];
+$oraInizio = validateInput($_POST["dataEsame"]) . ' ' . validateInput($_POST["oraInizio"]);
+$oraFine = validateInput($_POST["dataEsame"]) . ' ' . validateInput($_POST["oraFine"]);
 
 //aula
 $aula = $_POST["aula"];
@@ -56,9 +32,6 @@ $_SESSION["prenErr"] = "";
 //confronto con prenotazione lezioni
 if ($res->num_rows > 0) {
     while ($row = $res->fetch_assoc()) {
-        // echo $row["idAula"] . " " . $row["OraInizio"] . ":00 " . $row["OraFine"] . ":00 " . strtotime($row["OraInizio"]) . " " . strtotime($row["OraFine"]);
-        // echo "<br />" . $aula . " " . $oraInizio . " " . $oraFine . " " . strtotime($oraInizio) . " " . strtotime($oraFine);
-        // echo "<br /><br />"; 
         if ($row["idAula"] == $aula) {
             $strTimeInizio = strtotime($oraInizio);
             $strTimeFine = strtotime($oraFine);
@@ -85,9 +58,6 @@ $res = $conn->query($sql);
 //confronto con prenotazione esami
 if ($res->num_rows > 0) {
     while ($row = $res->fetch_assoc()) {
-        // echo $row["idAula"] . " " . $row["OraInizio"] . ":00 " . $row["OraFine"] . ":00 " . strtotime($row["OraInizio"]) . " " . strtotime($row["OraFine"]);
-        // echo "<br />" . $aula . " " . $oraInizio . " " . $oraFine . " " . strtotime($oraInizio) . " " . strtotime($oraFine);
-        // echo "<br /><br />"; 
         if ($row["idAula"] == $aula) {
             $strTimeInizio = strtotime($oraInizio);
             $strTimeFine = strtotime($oraFine);
@@ -110,6 +80,10 @@ if ($res->num_rows > 0) {
 
 if ($ok) {
     //parsing corso
+    
+    //deallocazioni variabili di sessione
+    unset($_SESSION["oraFinePren"], $_SESSION["oraInizioPren"], $_SESSION["dataPren"]);
+    
     $corso = $_POST["tipoEsame"];
     $sql = "SELECT idCorso FROM corsi WHERE Nomecorso=\"$corso\"";
     $res = $conn->query($sql) or die($conn->error);

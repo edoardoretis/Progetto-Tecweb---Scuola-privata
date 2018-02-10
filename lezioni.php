@@ -19,23 +19,8 @@
     <p>Qui puoi vedere <?php if(isset($_SESSION["user"])) echo " e <a class='stdLink' href='prenotazioni.php'>prenotare</a> "?> gli orari delle lezioni.</p>
 
     <?php 
-    $server = "localhost";
-    $serverUser = "root";
-    $serverPassword = "";
-    $db = "Tecweb";
-    /*
-    Per accedere dal server:
-    $server = "localhost";
-    $serverUser = "tgranzie";
-    $serverPassword = "Yaiyahqu9guz9oox";
-    $db = "tgranzie";
-    */
-    $conn = new mysqli($server,$serverUser,$serverPassword,$db);
-    
-    // Check connection
-    if ($conn->connect_error)
-        die("Connection failed: " . $conn->connect_error);
-    
+    include("scripts/connection.php");
+
     //query
     $sql = "SELECT DISTINCT lezioni.idCorso, idAula, Nomecorso, OraInizio, OraFine FROM lezioni JOIN corsi ON lezioni.IdCorso = corsi.IdCorso ORDER BY OraInizio"; 
     $result = $conn->query($sql);
@@ -122,7 +107,8 @@
         echo "<p>Non ci sono esami prenotati.</p>";
 
     if (isset($_SESSION["user"])) {
-        echo "<a id='prenotazione' href='prenotazioni.php'>Prenota una lezione</a>";
+        $tabindexCounter++;
+        echo "<a id='prenotazione' href='prenotazioni.php' tabindex='$tabindexCounter'>Prenota una lezione</a>";
     }
 
     ?>

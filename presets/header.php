@@ -8,7 +8,7 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     <meta name="title" content="Scuola Privata - Home page" />
     <meta name="description" content="Scuola Privata per corsi di linguab inglese" />
     <meta name="keywords" content="Scuola privata, istruzione" />
-    <meta name="author" content="Elisa, Edoardo, Timoty" />
+    <meta name="author" content="Elisa, Timoty, Edoardo" />
     <meta name="language" content="italian it" />
 
     <link href="style/style.css" rel="stylesheet" type="text/css" media="screen"/>
@@ -29,12 +29,12 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     
     echo '>Direttore: Dr. Rossi Mario</h2>
     </div>';
-
+    echo "\n\t";
     if ($title != "Home") 
         echo '<div id="path">Ti trovi in: <span xml:lang="en">Home</span> &gt;&gt; ' . $title;
     else 
         echo '<div id="path">Ti trovi in: <span xml:lang="en">' . $title . '</span>';
 
     include("scripts/benvenuto.php");
-    echo '</div>';
+    echo '</div>' . "\n\t";
 ?>

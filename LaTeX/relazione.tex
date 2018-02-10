@@ -26,6 +26,7 @@
 	
 	{\LARGE\bfseries Progetto di Tecnologie Web \par}
 	\vspace{1cm}
+	
 	{\Large\bfseries a.a. 2017/2018 \par}
 	\vspace{2cm}
 	
@@ -69,9 +70,9 @@ Il sito internet si propone come obbiettivo il raggiungimento di un utenza non s
 
 \subsection{Lo scopo del sito web}
 Il sito si propone di stabilire un canale di comunicazione sicuro e semplice tra la scuola e gli studenti che lo frequentano. A tal proposito abbiamo progettato il sito web concentrandoci sugli aspetti che potessero non solo dare all’utente la risposta che cerca, ma anche fornire un modo chiaro per farlo. Il sito web di fatto è semplice ed intuitivo, con una grafica non invasiva ma non per questo da ritenersi obsoleta.\par
-\bigskip
+\smallskip
 All’interno del sito l’utente proverà una serie di corsi accompagnati da una breve descrizione. Una volta scelto il corso, ci saranno pagine dedicate allo svolgimento dei corsi e successivamente dell’esame.\par
-\bigskip
+\smallskip
 Oltre alla parte utente, il sito possiede anche una parte docente, dove proprio quest’ultimi possono prenotare aule per le lezioni o inserire gli orari e date degli esami.
 Nei seguenti paragrafi verrà descritta la struttura del sito internet e suoi dettagli tecnici, elencando le tecnologie usate e le funzioni a disposizione. Verrà in particolar modo commentata l’accessibilità e l’usabilità del sito dimostrando quanto il progetto sia in linea con i moderni standard di progettazione.
 
@@ -129,20 +130,22 @@ Javascript viene usato principalmente per due script: l'ultima modifica (nel fil
 \end{itemize}
 
 \subsection{Uso di PHP}
-La parte relativa a PHP è piuttosto consistente. Nella cartella \textit{presets}, sono presenti
+La parte relativa a PHP è piuttosto consistente. Nella cartella \textit{presets}, sono presenti 
 alcuni script che, se inclusi tramite il comando \texttt{include()} di PHP, generano dimanicamente
 una parte della pagina. \par
 \smallskip
-Nei file \textbf{header.php}, \textbf{footer.php} e \textbf{menu.php} generano rispettivamente la prima 
-parte della pagina, il menu (assegnando dinamicamente valori di \texttt{tabindex} e la scheda attiva). \par
+I file \textbf{header.php}, \textbf{footer.php} e \textbf{menu.php} generano rispettivamente la prima 
+parte della pagina, il menù (assegnando dinamicamente valori di \texttt{tabindex} e la scheda attiva). \par
 \smallskip
 Nella cartella \textit{script}, sono presenti diversi script .php che eseguono controlli e comandi. Per interfacciarsi al database, si è scelto di utilizzare la libreria \texttt{mysqli}.\par
 \smallskip
-In \textbf{benvenuto.php} è un semplice script che genera codice relativo al login: chiede di accedere
-in caso non ci sia un utente loggato, e da la possibilità di uscire in caso contrario. \textbf{logout.php} viene lanciato quando un utente loggato clicca su \texttt{Esci}. \par
-Il file \textbf{validate\_form.php} serve a convalidare se il login avviene con successo o meno, e segnalare
-gli eventuali errori. Infine, \mbox{\textbf{validate\_prenotation.php}} e \mbox{\textbf{validate\_prenotation\_exams.php}} validano le prenotazioni relative rispettivamente alle lezioni e agli esami (per 
-evitare) sovrapposizioni), e in caso il controllo non riscontri problemi, le lezioni vengono inserite nel database.
+Un semplice script che genera codice relativo al login è \textbf{benvenuto.php}: chiede di accedere
+in caso non ci sia un utente loggato, e da la possibilità di uscire in caso contrario. Lo script \textbf{logout.php} viene lanciato quando un utente loggato clicca su \texttt{Esci}. \par
+Per verificare se il login avviene con successo e segnalare
+gli eventuali errori, viene utilizzato lo script \textbf{validate\_form.php}. \par
+Infine, \mbox{\textbf{validate\_prenotation.php}} e \mbox{\textbf{validate\_prenotation\_exams.php}} 
+validano le prenotazioni relative rispettivamente alle lezioni e agli esami (per 
+evitare sovrapposizioni), e in caso il controllo non riscontri problemi, le lezioni vengono inserite nel database.
 
 
 

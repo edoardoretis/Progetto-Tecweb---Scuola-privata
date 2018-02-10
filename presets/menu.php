@@ -2,51 +2,56 @@
 
 echo '<div id="nav">
     <a href="#corpo" id="skipNav">Salta la navigazione</a> <!-- position: absolute; height: 0; overflow: hidden; -->
-    <ul>';
+    <ul>' . "\n";
 
-$tabindexCounter = 1;
+$tabindexCounter = 0;
 
+echo "\t\t";
 if (isset($activeItem) && $activeItem == 0)
-    echo '<li class="active"><span xml:lang="en">Home</span></li>';
+    echo '<li class="active"><span xml:lang="en">Home</span></li>' . "\n";
 
 else {
-    echo '<li><a href="home.php" xml:lang="en" tabindex="' . $tabindexCounter .'">Home</a></li>';
     $tabindexCounter++;
+    echo '<li><a href="home.php" xml:lang="en" tabindex="' . $tabindexCounter .'">Home</a></li>' . "\n";
 }
 
+echo "\t\t";
 if (isset($activeItem) && $activeItem == 1)
-    echo '<li class="active">Corsi</li>';
+    echo '<li class="active">Corsi</li>' . "\n";
 
 else {
-    echo '<li><a href="corsi.php" tabindex="' . $tabindexCounter . '">Corsi</a></li>';
     $tabindexCounter++;
+    echo '<li><a href="corsi.php" tabindex="' . $tabindexCounter . '">Corsi</a></li>' . "\n";
+    
 }
 
+echo "\t\t";
 if (isset($activeItem) && $activeItem == 2)
-    echo '<li class="active">Lezioni</li>';
+    echo '<li class="active">Lezioni</li>' . "\n";
 
 else {
-    echo '<li><a href="lezioni.php" tabindex="' . $tabindexCounter . '">Lezioni</a></li>';
     $tabindexCounter++;
+    echo '<li><a href="lezioni.php" tabindex="' . $tabindexCounter . '">Lezioni</a></li>' . "\n";
 }
 
+echo "\t\t";
 if (isset($activeItem) && $activeItem == 3)
-    echo '<li class="active">Esami</li>';
+    echo '<li class="active">Esami</li>' . "\n";
 
 else {
-    echo '<li><a href="esami.php" tabindex="' . $tabindexCounter . '">Esami</a></li>';
-    $tabindexCounter++;
+    $tabindexCounter++;    
+    echo '<li><a href="esami.php" tabindex="' . $tabindexCounter . '">Esami</a></li>' . "\n";
 }
 
-
+echo "\t\t";
 if (isset($activeItem) && $activeItem == 4)
-    echo '<li class="active">Contatti</li>';
+    echo '<li class="active">Contatti</li>' . "\n";
 
 else { 
-    echo '<li><a href="contatti.php" tabindex="' . $tabindexCounter . '">Contatti</a></li>';
-    $tabindexCounter++;
+    $tabindexCounter++;    
+    echo '<li><a href="contatti.php" tabindex="' . $tabindexCounter . '">Contatti</a></li>' . "\n";
 }
 
-echo '</ul></div>';
+echo "\t" . '</ul>' . "\n\t</div>\n";
 
 ?>

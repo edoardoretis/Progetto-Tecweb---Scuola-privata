@@ -1,25 +1,8 @@
 <?php 
 session_start();
 
-$server = "localhost";
-$serverUser = "root";
-$serverPassword = "";
-$db = "Tecweb";
-/*
-Per accedere dal server:
-$server = "localhost";
-$serverUser = "tgranzie";
-$serverPassword = "Yaiyahqu9guz9oox";
-$db = "tgranzie";
-*/
-$conn = new mysqli($server,$serverUser,$serverPassword,$db);
-
-function validate_input($var) {
-    $var = trim($var);
-    $var = stripslashes($var);
-    $var = htmlspecialchars($var);
-    return $var;
-}
+include("functions.php");
+include("connection.php");
 
 //errors handling
 $_SESSION["err"] = array();
@@ -48,8 +31,8 @@ else {
 
 
 if (isset($_POST["email"], $_POST["psw"])) {
-    $email = validate_input($_POST["email"]);
-    $userpsw = validate_input($_POST["psw"]);
+    $email = validateInput($_POST["email"]);
+    $userpsw = validateInput($_POST["psw"]);
     $_POST["email"] = $email;
     $_POST["psw"] = $userpsw;
 

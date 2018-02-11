@@ -47,8 +47,8 @@
 
 
 		<ul class="marginsLeft">
-			<li><strong>Per chi arriva in auto:</strong> uscire dall'autostrada o tangenziale all'uscita di Padova Fiera e prendere direzione verso il centro. lungo la strada vedrete le insegne della nostra scuola e vicino un ampio parcheggio;</li>
-			<li><strong>Dalla stazione degli autobus e dei treni:</strong> si esce dalla stazione, si gira a sinistra e poi immediatamente a destra al semaforo (via Trieste), si cammina lungo via Trieste per circa 300m.</li>
+			<li><strong>Per chi arriva in auto:</strong> uscite dall'autostrada o tangenziale all'uscita di <em>Padova Fiera</em> e continuate verso il <em>centro</em>. Lungo la strada, vedrete le insegne della nostra scuola e vicino un ampio parcheggio;</li>
+			<li><strong>Dalla stazione degli autobus e dei treni:</strong> uscite dalla stazione, girate a sinistra e poi immediatamente a destra al <em>semaforo</em> (via Trieste), camminate lungo <em>via Trieste</em> per circa 300m e sarete a destinazione.</li>
 		</ul>	
     </div>
 

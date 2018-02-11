@@ -4,7 +4,6 @@ echo '<div id="nav">
     <a href="#corpo" id="skipNav">Salta la navigazione</a> <!-- position: absolute; height: 0; overflow: hidden; -->
     <ul>' . "\n";
 
-$tabindexCounter = 0;
 
 echo "\t\t";
 if (isset($activeItem) && $activeItem == 0)

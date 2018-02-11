@@ -10,7 +10,7 @@
 ?>
     <div id="corpo">
     <h2>Esami</h2>
-    <p>Qui puoi vedere <?php if(isset($_SESSION["user"])) echo " e <a href='prenotazioni_esami.php'>prenotare</a> "?> le date degli esami.</p>
+    <p>Qui puoi vedere <?php if(isset($_SESSION["user"])) echo " e <a href='prenotazioni_esami.php'>prenotare</a> "?> le date degli esami relative ai corsi.</p>
     <?php 
     include("scripts/connection.php");
     

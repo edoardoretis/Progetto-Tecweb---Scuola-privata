@@ -155,7 +155,7 @@ li.active {
     margin-left: 6%;
     margin-right: 6%;
     line-height: 1.6;
-    word-spacing: 0.1em;
+    letter-spacing: 0.04em;
     margin-top: 0.3em;
 }
 
@@ -165,7 +165,7 @@ li.active {
 
 #corpo li {
     line-height: 1.6;
-    word-spacing: 0.1em;
+    letter-spacing: 0.04em;
 }
 
 #corpo dt {
@@ -323,6 +323,9 @@ fieldset {
 }
 
 @media screen and (max-width: 840px) {
+    body {
+        width: 100%;
+    }
     #header img {
         display: none;
     }

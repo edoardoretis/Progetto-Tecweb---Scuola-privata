@@ -19,6 +19,7 @@
 ?>
         <form method="post" action="scripts/validate_prenotation.php" id="prenotationForm">
         <fieldset>
+            <label for="tipoLezione">Corso</label>
             <select name="tipoLezione" id="tipoLezione" size="1" tabindex="<?php
             $tabindexCounter++; echo $tabindexCounter; ?>">
                 <option value="B0">corso Base</option>

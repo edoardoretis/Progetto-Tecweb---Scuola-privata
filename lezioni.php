@@ -16,7 +16,7 @@
         unset($_SESSION["prenotazioneOk"]);
     }
     ?>
-    <p>Qui puoi vedere <?php if(isset($_SESSION["user"])) echo " e <a class='stdLink' href='prenotazioni.php'>prenotare</a> "?> gli orari delle lezioni.</p>
+    <p>Qui puoi vedere <?php if(isset($_SESSION["user"])) echo " e <a class='stdLink' href='prenotazioni.php'>prenotare</a> "?> gli orari delle lezioni relative ai corsi.</p>
 
     <?php 
     include("scripts/connection.php");

@@ -1,4 +1,5 @@
 <?php 
+$tabindexCounter = 0;
 echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="it" lang="it">
@@ -31,7 +32,7 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     if ($title != "Home")
         echo ' style="visibility: hidden"'; 
     
-    echo '>Direttore: Dr. Rossi Mario</h2>' . "\n";
+    echo '>Direttore: <abbr title="Dottor">Dr.</abbr> Rossi Mario</h2>' . "\n";
     echo '</div>';
 
     echo "\n\t";

@@ -23,7 +23,7 @@
 	pdfmenubar=true,
 	pdftitle={English World},
 	pdfauthor={Timoty Granziero, Elisa Giorio},
-	pdfcreator={Timoty Granziero}	
+	pdfcreator={Timoty Granziero}
 }
 
 \begin{document}
@@ -46,7 +46,7 @@
 	
 	\vfill 
 
-	Autori: \par
+	Membri del gruppo: \par
 	{\bfseries Elisa Giorio \par}
 	{\bfseries Timoty Granziero \par}
 	{\bfseries Edoardo Retis \par}
@@ -54,9 +54,9 @@
 	\vfill
 
 	Indirizzo del sito: \par
-	\url{www.wikipedia.com}
+	\url{http://tecweb2016.studenti.math.unipd.it/tgranzie/}
 	\vfill
-	Autenticazione:\par
+	Autenticazione (un utente):\par
 	email: \texttt{braian@libero.it}\par
 	password: \texttt{brapol}
 	\vfill
@@ -86,25 +86,20 @@ Il sito si propone di stabilire un canale di comunicazione sicuro e semplice tra
 \smallskip
 All’interno del sito l’utente proverà una serie di corsi accompagnati da una breve descrizione. Una volta scelto il corso, ci saranno pagine dedicate allo svolgimento dei corsi e successivamente dell’esame.\par
 \smallskip
-%Oltre alla parte utente, il sito possiede anche una parte docente, dove proprio quest’ultimi possono prenotare aule per le lezioni o inserire gli orari e date degli esami.
 Nei seguenti paragrafi verrà descritta la struttura del sito internet e suoi dettagli tecnici, elencando le tecnologie usate e le funzioni a disposizione. Verrà in particolar modo commentata l’accessibilità e l’usabilità del sito dimostrando quanto il progetto sia in linea con i moderni standard di progettazione.
 
 \section{Gruppo di lavoro}
-Al momento della conformazione del gruppo, ogni componente ha potuto decidere quale parte del progetto avrebbe preferito curare e realizzare. 
+Al momento della conformazione del gruppo, ogni componente ha potuto decidere quale parte del progetto avrebbe preferito curare e realizzare.
 Il lavoro è stato così suddiviso:
+
 \begin{itemize}
 	\item Elisa Giorio: \texttt{HTML}, \texttt{CSS}, accessibilità e usabilità;
-	\item Timoty Granziero: \texttt{PHP}, \texttt{MySQL}, \texttt{CSS};
-	\item Edoardo Retis: ???
+	\item Timoty Granziero: \texttt{PHP}, \texttt{MySQL}, \texttt{CSS/CSS responsive};
+	\item Edoardo Retis: ?
 \end{itemize}
 
-Per quanto riguarda la condivisione del materiale è stata usata la piattaforma di GitHub.
-
-%\section{Gerarchia dei file}
-
-%\subsection{Rappresentazione grafica}
-
-%\subsection{Organizzazione interna}
+Per quanto riguarda la condivisione del materiale è stata usata la piattaforma di \texttt{GitHub}. La 
+repository è raggiungibile al seguente link: \url{https://github.com/edoardoretis/Progetto-Tecweb---Scuola-privata.git}.
  
 \pagebreak %da vedere se ometterlo
 
@@ -123,6 +118,8 @@ Tutte le pagine principali seguono lo stesso schema ed è quello visto a lezione
 	\includegraphics[height=9cm]{img/prog.png}
 	\caption{Immagine che mostra il design del layout scelto.}	
 \end{figure}
+
+\pagebreak
 
 \section{Progettazione Logica}
 
@@ -154,11 +151,18 @@ scomodare framework o altre librerie che per l'uso praticamente nullo che ne avr
 sarebbe stato un inutile incremento dei tempi di risposta della pagina web.
 
 \subsection{Uso di Javascript}
-Javascript viene usato principalmente per due script: l'ultima modifica (nel file \textit{ultima\_modifica.js}), e come codice embedded nel file \textit{corsi.php}.
+Javascript viene usato principalmente per tre script: l'ultima modifica (nel file \textit{ultima\_modifica.js}), come codice embedded nel file \textit{corsi.php} e nel file
+\textit{responsive\_menu.js}.
 \begin{itemize}
-	\item \textbf{ultima\_modifica.js}: in questo script viene aggiornata la data di ultima modifica del file dove è chiamata la funzione \texttt{lastModify()}.
-	\item \textbf{corsi.php}: in questa pagina, viene utilizzato uno script che visualizza la posizione della sede immaginaria (esattamente quella della 
-	Torre Archimede di Padova) attraverso un frame di \textit{Google Maps}.
+	\item \textbf{ultima\_modifica.js}: in questo script viene aggiornata la data di 
+	ultima modifica del file dove è chiamata la funzione \texttt{lastModify()};
+	\item \textbf{corsi.php}: in questa pagina, viene utilizzato uno script che visualizza 
+	la posizione della sede immaginaria (esattamente quella della 
+	Torre Archimede di Padova) attraverso un frame di \textit{Google Maps};
+	\item \textbf{responsive\_menu.js}: come prevedibile dal nome, questo file contiene
+	una funzione Javascript \texttt{responsiveMenu()} che rende disponibile il \texttt{toggle} del menù
+	a tendina nel caso si utilizzi il sito da un dispositivo con schermo di dimensioni
+	ridotte.
 \end{itemize}
 
 \subsection{Uso di PHP}
@@ -171,11 +175,13 @@ parte della pagina, il menù (assegnando dinamicamente valori di \texttt{tabinde
 \smallskip
 Nella cartella \textit{script}, sono presenti diversi script .php che eseguono controlli e comandi. Per interfacciarsi al database, si è scelto di utilizzare la libreria \texttt{mysqli}.\par
 \smallskip
+Lo script \textbf{connection.php} genera la connessione con il database e lancia un eccezione
+in caso di errore.\par
 Un semplice script che genera codice relativo al login è \textbf{benvenuto.php}: chiede di accedere
 in caso non ci sia un utente loggato, e da la possibilità di uscire in caso contrario. Lo script \textbf{logout.php} viene lanciato quando un utente loggato clicca su \texttt{Esci}. \par
 Per verificare se il login avviene con successo e segnalare
 gli eventuali errori, viene utilizzato lo script \textbf{validate\_form.php}. \par
-Infine, \mbox{\textbf{validate\_prenotation.php}} e 
+Infine, \mbox{\textbf validate\_prenotation.php } e 
 \mbox{\textbf{validate\_prenotation\_exams.php}} 
 validano le prenotazioni relative rispettivamente alle lezioni e agli esami (per 
 evitare sovrapposizioni), e in caso il controllo non riscontri problemi, le lezioni vengono inserite nel database.
@@ -194,8 +200,8 @@ Ecco l'elenco delle tabelle utilizzate con una breve descrizione:
 	\item in \texttt{docenti} ci sono i dati relativi ai docenti, comprese le 
 	credenziali per effettuare il login;
 	\item \texttt{lezioni} contiene le tuple relative alle prenotazioni delle 
-	lezioni relative ai corsi.
-	\item in \texttt{esami} è presente la lista degli esami relativi ai corsi;
+	lezioni relative ai corsi;
+	\item in \texttt{esami} è presente la lista degli esami relativi ai corsi.
 \end{itemize}
 
 \section{Validazione, Usabilità e Accessibilità}
@@ -217,7 +223,7 @@ L'usabilità delle pagine sui vari browser è stata testata tramite il sito web 
 I test effettuati su Internet Explorer sono stati fatti “a mano”. Questi sono i risultati:
 \begin{itemize}
 	\item[$-$] \textbf{IE 11}: il sito funziona correttamente, eccezione fatta per la 
-	pagina \emph{contatti.php} in cui il frame di GMaps non funziona.
+	pagina \emph{contatti.php} in cui il frame di GMaps non funziona;
 	\item[$-$] \textbf{IE 10} e \textbf{IE 8}: rilevato lo stesso problema di Internet Explorer 11. Per il resto, tutto viene visualizzato  correttamente. 
 \end{itemize}
 
@@ -226,17 +232,17 @@ Per fornire all’utente una navigazione gradevole nel sito, abbiamo cercato di 
 la regola delle sei w:
 \begin{itemize}
 	\item \textbf{Who}: il sito in ogni pagina è molto riconoscibile, infatti grazie
-	all’header l’utente capisce sempre in che pagina del sito si trova.
+	all’header l’utente capisce sempre in che pagina del sito si trova;
 	\item \textbf{Where}: %l’utente può capire in ogni pagina dove si trova. Infatti il menù 
 	%è sempre presente ed è sempre evidenziata la pagina attiva. Inoltre, path indica la
 	%pagina attiva. In ogni pagina è sempre presente una piccola descrizione.
-	l’utente può capire in ogni pagina dove si trova grazie al menù a lato; inoltre la pagina attiva è sia indicata nel path che evidenziata nel menù. \\
-	In ogni pagina è sempre presente una piccola descrizione.
-	\item \textbf{When}: tutte le pagine dinamiche vengono aggiornate costantemente. \\
+	l’utente può capire in ogni pagina dove si trova grazie al menù laterale; inoltre la pagina attiva è sia indicata nel path che evidenziata nel menù. 
+	In ogni pagina è sempre presente una piccola descrizione;
+	\item \textbf{When}: tutte le pagine dinamiche vengono aggiornate costantemente. 
 	Nel footer è presente l’ultima modifica che rende facile anche all’utente capire se il
 	 sito è attivo o meno;
 	\item \textbf{Why}: le sezioni esami e lezioni, sono gli strumenti principali del sito.
-	Qui l’utente può verificare gli orari delle lezioni. \\
+	Qui l’utente può verificare gli orari delle lezioni. 
 	Anche per i docenti, queste due
 	sezioni saranno le più usate. Infatti, come già detto, l'utente loggato ha la possibilità
 	di prenotare lezioni e esami;
@@ -258,7 +264,7 @@ Le porzioni di codice presenti in tutte le pagine, quali ad esempio l’\emph{he
 \subsubsection{Good practices}
 Sono state seguite delle buone norme di coding per far sì che il sito sia accessibile a 
 tutte le tipologie di utenti senza distinzione. \par
-Come prima cosa, abbiamo utilizzato \texttt{span} con attributi \texttt{xml:lang} per definire correttamente termini che non sono nella lingua predefinita (nel nostro caso, abbiamo scelto di usare l'italiano come lingua principale nonostante sia un sito per 
+Come prima cosa, abbiamo utilizzato \texttt{span} con attributo \texttt{xml:lang} per definire correttamente termini che non sono nella lingua predefinita (nel nostro caso, abbiamo scelto di usare l'italiano come lingua principale nonostante sia un sito per 
 lo studio della lingua inglese). \par
 In secondo luogo, è presente un \texttt{link} non visibile che viene letto 
 normalmente dagli screen reader, che permette agli utenti con deficit visivo di
@@ -271,16 +277,20 @@ Per quanto riguarda l’uso dei colori sono state fatte delle prove di accessibi
 \mbox{\url{http://www.vischeck.com}}. I risultati, sono stati soddisfacenti, in quanto per problemi come Deuteranope, Protanope e Tritanope non sono stati rilevati cambiamenti drastici.\par
 Questi sono i risultati ottenuti: \par
 
-\includegraphics[height=4.5cm]{img/Deuteranope.PNG}\par
-\includegraphics[height=4.5cm]{img/Protanope.PNG}\par
-\includegraphics[height=4.5cm]{img/Tritanope.PNG}\par
+\includegraphics[height=3.9cm]{img/Deuteranope.PNG}\par
+\includegraphics[height=3.9cm]{img/Protanope.PNG}\par
+\includegraphics[height=3.9cm]{img/Tritanope.PNG}\par
 
 I problemi sono stati rilevati in deuteranope e protanope per la visualizzazione del rosso,
 ma questo non cambia la resa del sito. Mentre per la tritanope c’è un problema con la
 visualizzazione del path, infatti il colore ocra non viene visto correttamente. Anche questo non crea nessun problema o cambio significativo nella resa del sito.\par
 
-In conclusione, possiamo dire che le scelte di colori fatte possono essere adeguabili a tutti!
+In conclusione, possiamo dire che le scelte di colori fatte sono adatte a tutti.
 
 \section{Considerazioni finali}
+Il progetto è stato realizzato nei tempi previsti, senza riscontrare particolari difficoltà, poiché alle lezioni e ai laboratori ci sono stati forniti gli strumenti adeguati per portarlo al termine. \par
+L’unico vero problema riscontato è stato a livello di gruppo: il terzo componente, Edoardo Retis, a un mese dalla consegna si è preso degli incarichi per il progetto che non ha mai portato a compimento, senza dare il proprio contributo alla realizzazione del progetto (la lista dei commit presenti su \texttt{GitHub} ne è una prova). Gli altri due membri, Timoty ed Elisa, a pochi giorni dalla consegna hanno dovuto sopperire alle scadenze non rispettate di Edoardo, trovandosi un carico di lavoro non previsto. \par
+\medskip
+In conclusione, siamo soddisfatti del lavoro svolto: abbiamo deciso di pensare più a un progetto efficiente dal punto di vista concettuale e di puntare a una grafica minimal,  ma d’impatto, non ritenendo necessario includere grosse librerie per utilizzare poche funzionalità visto anche la fascia di utenti che è previsto visitino il sito.
 
 \end{document}

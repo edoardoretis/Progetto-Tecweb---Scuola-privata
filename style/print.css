@@ -1,16 +1,25 @@
 #header{
-text-align: center;
+    text-align: center;
 }
+
 #nav ul{
-display:none;
+    display:none;
 }
 
 #nav form{
-display:none;
+    display:none;
 }
 
 #content{
-margin-left:0em;
+    margin-left:0em;
+}
+
+img {
+    display: none;
+}
+
+#hMenu {
+    display: none;
 }
 
 /*header style*/
@@ -42,6 +51,6 @@ h1 {
 }
 
 #footer{
-display: none;
+    display: none;
 }
 
